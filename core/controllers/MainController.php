@@ -13,11 +13,6 @@
 
             parent::getView("main");
         }
-
-        public function err404() {
-
-            parent::getView("errors/404", false);
-        }
     }
 
 ?>
