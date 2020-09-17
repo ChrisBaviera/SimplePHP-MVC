@@ -12,6 +12,11 @@
         const ERRORS_CONTROLLER = "Errors";
         const ERR404_ROUTE      = "Errors::err404";
 
+        const DB_HOST = "localhost";
+        const DB_NAME = "simple_php_mvc";
+        const DB_USER = "root";
+        const DB_PASS = "";
+
         private $controller;
         private $method;
 
