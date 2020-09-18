@@ -13,12 +13,6 @@
 
             parent::getView("main");
         }
-
-        public function login() {
-
-            require_once("core/models/UserModel.php");
-            UserModel::doLogin("Prova", "test");
-        }
     }
 
 ?>
