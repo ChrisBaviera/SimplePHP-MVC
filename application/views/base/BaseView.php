@@ -11,18 +11,22 @@
             //This class cannot be instantiated
         }
 
-        public static function getView(string $view, array $args = array(), bool $template = true, string $lang = null) {
+        public static function getView(string $view, array $args = array(), string $lang = null, bool $template = true) {
 
+            //Page arguments
             foreach($args as $key => $val)
                 $$key = $val;
 
-                //Language array
-                require_once("application/languages/" . $lang == null ? Globals::DEFAULT_LANGUAGE : $lang . ".php");
-
-                //Page
-                if($template)   require_once("application/views/templates/" . Globals::DEFAULT_TEMPLATE . "/header.php");
-                                require_once("application/views/pages/" . $view . ".php");
-                if($template)   require_once("application/views/templates/" . Globals::DEFAULT_TEMPLATE . "/footerc.php");
+            //Language
+            $langPath = $lang == null ? (isset($_GET['lang']) ? htmlspecialchars($_GET['lang']) : Globals::DEFAULT_LANGUAGE) : $lang;
+            
+            if(file_exists("application/languages/" .$langPath . ".php")) require_once("application/languages/" . $langPath . ".php");
+            else require_once("application/languages/" . Globals::DEFAULT_LANGUAGE . ".php"); 
+            
+            //Page
+            if($template)   require_once("application/views/templates/" . Globals::DEFAULT_TEMPLATE . "/header.php");
+                            require_once("application/views/pages/" . $view . ".php");
+            if($template)   require_once("application/views/templates/" . Globals::DEFAULT_TEMPLATE . "/footer.php");
         }
     }
 ?>

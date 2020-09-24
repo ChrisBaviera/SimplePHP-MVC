@@ -8,6 +8,7 @@
 
             $controller = isset($_GET['controller']) ? htmlspecialchars($_GET['controller']) : Globals::DEFAULT_CONTROLLER;
             $method     = isset($_GET['method'])     ? htmlspecialchars($_GET['method'])     : Globals::DEFAULT_METHOD;
+            $lang       = isset($_GET['lang'])       ? htmlspecialchars($_GET['lang'])       : Globals::DEFAULT_LANGUAGE;
 
             $args = array();
             if(isset($_GET['arg'])) 

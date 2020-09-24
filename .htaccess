@@ -2,6 +2,7 @@ RewriteEngine On
 
 RewriteRule ^index\.php$ - [L]
 
-RewriteRule ^([^/]+)/?$ index.php?&method=$1 [L,QSA]
-RewriteRule ^([^/]+)/([^/]+)/?$ index.php?controller=$1&method=$2  [L,QSA]
-RewriteRule ^([^/]+)/([^/]+)/([^/]+)/?$ index.php?controller=$1&method=$2&arg=$3  [L,QSA]
+RewriteRule ^([^/]+)/?$ index.php?&lang=$1 [L,QSA]
+RewriteRule ^([^/]+)/([^/]+)/?$ index.php?lang=$1&method=$2  [L,QSA]
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/?$ index.php?lang=$1&method=$2&arg=$3  [L,QSA]
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/?$ index.php?lang=$1&controller=$2&method=$3&arg=$4  [L,QSA]
