@@ -148,10 +148,11 @@
          * Executes SELECT query to search rows
          *
          * @param BaseModel $model Class for modeling result
+         * @param boolean $strict Search mode
          * @param array $fields List of fields: array('field' => field, 'value' => value)
          * @return array Result from the query execution
          */
-        public function search(BaseModel $model, bool $strict = true, array ...$fields) : array {
+        public function searchData(BaseModel $model, bool $strict = true, array ...$fields) : array {
 
             $result     = array();
             $filters    = array();
@@ -167,6 +168,19 @@
                 $result[] = $r;
 
             return $result;
+        }
+
+        /**
+         * 
+         * Format Data for BaseModel::searchData()
+         *
+         * @param string $field Field name in DB
+         * @param string $value Value of the field
+         * @return array The formatted array
+         */
+        public function formatData(string $field, string $value) : array {
+
+            return array("field" => $field, "value" => $value);
         }
     }
 ?>
