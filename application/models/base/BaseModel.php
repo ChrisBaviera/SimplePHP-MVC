@@ -142,5 +142,31 @@
 
             return $result;
         }
+
+        /**
+         * 
+         * Executes SELECT query to search rows
+         *
+         * @param BaseModel $model Class for modeling result
+         * @param array $fields List of fields: array('field' => field, 'value' => value)
+         * @return array Result from the query execution
+         */
+        public function search(BaseModel $model, bool $strict = true, array ...$fields) : array {
+
+            $result     = array();
+            $filters    = array();
+
+            foreach($fields as $field) $filters[] = $strict ? "{$field['field']} = '{$field['value']}'" : "{$field['field']} LIKE '%{$field['value']}%'";
+
+            $sql = "SELECT * FROM {$this->table} WHERE " . implode(" AND ", $filters);
+
+            $sth = $this->db->prepare($sql);
+            $sth->execute();
+
+            while($r = $sth->fetchObject(get_class($model)))
+                $result[] = $r;
+
+            return $result;
+        }
     }
 ?>

@@ -1,1 +1,2 @@
-<?= $lang['app_name']; ?>
+
+  <p>Hello, <?= $lang['app_name']; ?></p>

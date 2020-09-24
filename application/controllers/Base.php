@@ -15,7 +15,5 @@
         public function index() {
 
             View::getView("index");
-
-            echo "<p>Hello, World!</p>";
         }
     }
