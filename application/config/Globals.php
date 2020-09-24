@@ -27,7 +27,7 @@
         const DEFAULT_CONTROLLER    = "Base";
         const DEFAULT_METHOD        = "index";
         const DEFAULT_TEMPLATE      = "base";
-        const DEFAULT_LANGUAGE      = "IT";
+        const DEFAULT_LANGUAGE      = "EN";
 
     }
 ?>
