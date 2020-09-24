@@ -20,7 +20,7 @@
             if(file_exists($controllerPath) && method_exists("App\Controllers\\" . $controller, $method))
                 call_user_func_array("App\Controllers\\" . $controller . "::" . $method, $args);
             else 
-                header("Location: " . Globals::ERROR_URL . "err404");
+                header("Location: " . Globals::BASE_URL . $lang . "/" . Globals::ERROR_URL . "err404");
         }
     }
 ?>

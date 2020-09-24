@@ -5,12 +5,12 @@
     class Globals {
 
         //APP Details
-        const APP_NAME              = "Gestione Prenotazioni";
+        const APP_NAME              = "SimplePHP-MVC";
         const APP_VERSION           = "0.0.1";
 
         //APP Urls
         const BASE_URL              = "http://localhost/";
-        const ERROR_URL             = "http://localhost/";
+        const ERROR_URL             = "Errors/";
 
         //APP Assets
         const CSS                   = "assets/css/";
