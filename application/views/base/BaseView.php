@@ -20,9 +20,9 @@
                 require_once("application/languages/" . $lang == null ? Globals::DEFAULT_LANGUAGE : $lang . ".php");
 
                 //Page
-                if($template)   require_once("application/views/template/" . Globals::DEFAULT_TEMPLATE . "/header.php");
+                if($template)   require_once("application/views/templates/" . Globals::DEFAULT_TEMPLATE . "/header.php");
                                 require_once("application/views/pages/" . $view . ".php");
-                if($template)   require_once("application/views/template/" . Globals::DEFAULT_TEMPLATE . "/footerc.php");
+                if($template)   require_once("application/views/templates/" . Globals::DEFAULT_TEMPLATE . "/footerc.php");
         }
     }
 ?>

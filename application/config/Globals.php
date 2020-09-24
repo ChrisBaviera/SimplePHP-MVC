@@ -12,6 +12,11 @@
         const BASE_URL              = "http://localhost/";
         const ERROR_URL             = "http://localhost/";
 
+        //APP Assets
+        const CSS                   = "assets/css/";
+        const JAVASCRIPT            = "assets/javascript/";
+        const IMAGES                = "assets/images/";
+
         //APP DB Settings
         const DB_HOST               = "localhost";
         const DB_NAME               = "";
