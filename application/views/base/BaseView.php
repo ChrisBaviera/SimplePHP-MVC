@@ -45,5 +45,16 @@ use App\Globals;
                             require_once("application/views/pages/" . $view . ".php");
             if($template)   require_once("application/views/templates/" . Globals::DEFAULT_TEMPLATE . "/footer.php");
         }
+
+        public static function getLanguages() {
+
+            $files = scandir("application/languages/");
+
+            for($i=2; $i<count($files); $i++) {
+
+                $lang = explode(".", $files[$i]);
+                echo "<a href='" . Globals::BASE_URL . strtolower($lang[0]) . "'><img style='width: 20px; height: 20px; margin: 5px;' src='" . Globals::BASE_URL . Globals::IMAGES . "flags/" . $lang[0] . ".png'></a>";
+            }
+        }
     }
 ?>
